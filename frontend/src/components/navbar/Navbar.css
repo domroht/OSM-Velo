@@ -1,0 +1,107 @@
+.navbar {
+  height: 60px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+
+  padding: 0 24px;
+
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.navbar-logo {
+  color: #111;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar-center a {
+  position: relative;
+
+  padding: 20px 0;
+
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navbar-center a:hover {
+  color: #111;
+}
+
+.navbar-center a.active {
+  color: #111;
+}
+
+.navbar-center a.active::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 2px;
+
+  background: #111;
+}
+
+
+
+
+.navbar-icon,
+.navbar-language,
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.navbar-icon {
+  width: 32px;
+  height: 32px;
+
+  font-size: 14px;
+}
+
+.navbar-language {
+  width: 32px;
+  height: 32px;
+
+  font-size: 14px;
+}
+
+.navbar-profile {
+  width: 32px;
+  height: 32px;
+
+  font-size: 14px;
+}
