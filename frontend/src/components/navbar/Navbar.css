@@ -105,3 +105,13 @@
 
   font-size: 14px;
 }
+
+.navbar-language {
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}

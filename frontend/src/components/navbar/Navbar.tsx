@@ -1,6 +1,9 @@
 import { NavLink } from "react-router";
 import "./Navbar.css";
 
+import sun from "../../assets/icons/sun.svg";
+import user from "../../assets/icons/user.svg"
+
 function Navbar() {
   return (
     <nav className="navbar">
@@ -18,15 +21,15 @@ function Navbar() {
 
       <div className="navbar-right">
         <button className="navbar-icon">
-          Mode
+          <img src={sun}/>
         </button>
 
         <button className="navbar-language">
-          Sprog
+          EN
         </button>
 
         <button className="navbar-profile">
-          Profil
+          <img src={user}/>
         </button>
       </div>
     </nav>

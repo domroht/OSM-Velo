@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import {
-  Map,
+  Map as MapLibreMap,
   NavigationControl,
   AttributionControl,
   setWorkerUrl,
@@ -12,13 +12,17 @@ import "./MapView.css";
 
 setWorkerUrl(workerUrl);
 
-function MapView() {
+type MapViewProps = {
+  onMapReady?: (map: MapLibreMap) => void;
+};
+
+function MapView({ onMapReady }: MapViewProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!mapContainer.current) return;
 
-    const map = new Map({
+    const map = new MapLibreMap({
       container: mapContainer.current,
 
       style: {
@@ -61,8 +65,10 @@ function MapView() {
       "bottom-right",
     );
 
+    onMapReady?.(map);
+
     return () => map.remove();
-  }, []);
+  }, [onMapReady]);
 
   return <div ref={mapContainer} className="map-view" />;
 }
