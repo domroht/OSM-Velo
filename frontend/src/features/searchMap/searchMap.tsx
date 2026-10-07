@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Map as MapLibreMap } from "maplibre-gl";
 
 import search from "../../assets/icons/search.svg";
-import "./MapSearch.css";
+import "./searchMap.css";
 
 type MapSearchProps = {
   map: MapLibreMap | null;
@@ -62,7 +62,7 @@ function MapSearch({ map, onClose }: MapSearchProps) {
         Number(result.lon),
         Number(result.lat),
       ],
-      zoom: 15,
+      zoom: 10,
       duration: 1500,
     });
 

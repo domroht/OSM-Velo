@@ -1,18 +1,21 @@
 import { useState } from "react";
 import type { Map as MapLibreMap } from "maplibre-gl";
-import MapSearch from "../mapSearch/MapSearch";
 import "./MapSidebar.css";
+
+import MapSearch from "../../features/searchMap/searchMap";
+import MapRoutePlanner from "../../features/routeMap/routeMap";
 
 import panel_left_open from "../../assets/icons/panel-left-open.svg";
 import panel_left_close from "../../assets/icons/panel-left-close.svg";
 import search from "../../assets/icons/search.svg";
+import route from "../../assets/icons/route.svg"
 
 type MapSidebarProps = {
   map: MapLibreMap | null;
 };
 
 function MapSidebar({ map }: MapSidebarProps) {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const [activeTool, setActiveTool] = useState<string | null>(null);
 
   function closeTool() {
@@ -32,11 +35,13 @@ function MapSidebar({ map }: MapSidebarProps) {
           </span>
         )}
 
+        {/* TODO: gør så tools ikke bare lukker ned når man minimere side bar */}
         <button
           className="map-sidebar-toggle"
-          onClick={() =>
-            setCollapsed((current) => !current)
-          }
+          onClick={() =>{
+            setCollapsed((current) => !current);
+            closeTool();
+          }}
           aria-label={
             collapsed
               ? "Expand sidebar"
@@ -63,21 +68,57 @@ function MapSidebar({ map }: MapSidebarProps) {
             map={map}
             onClose={closeTool}
           />
+        ) : activeTool === "route" ? (
+          <MapRoutePlanner
+            map={map}
+            onClose={closeTool}
+          />
         ) : (
-          <button
-            className="map-sidebar-tool"
-            onClick={() => setActiveTool("search")}
-          >
-            <span className="map-sidebar-tool-icon">
-              <img src={search} alt="" />
-            </span>
+          <>
+            <button
+              className="map-sidebar-tool"
+              onClick={() => {
+                if (collapsed) {
+                  setCollapsed(false);
+                  return;
+                }
 
-            {!collapsed && (
-              <span className="map-sidebar-tool-label">
-                Search location
+                setActiveTool("search");
+              }}
+            >
+              <span className="map-sidebar-tool-icon">
+                <img src={search} alt="" />
               </span>
-            )}
-          </button>
+
+              {!collapsed && (
+                <span className="map-sidebar-tool-label">
+                  Search location
+                </span>
+              )}
+            </button>
+
+            <button
+              className="map-sidebar-tool"
+              onClick={() => {
+                if (collapsed) {
+                  setCollapsed(false);
+                  return;
+                }
+
+                setActiveTool("route");
+              }}
+            >
+              <span className="map-sidebar-tool-icon">
+                <img src={route}/>
+              </span>
+
+              {!collapsed && (
+                <span className="map-sidebar-tool-label">
+                  Plan route
+                </span>
+              )}
+            </button>
+          </>
         )}
       </div>
     </aside>
