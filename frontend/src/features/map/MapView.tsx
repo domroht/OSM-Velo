@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import {
   Map as MapLibreMap,
   NavigationControl,
-  AttributionControl,
   setWorkerUrl,
 } from "maplibre-gl";
 
@@ -11,6 +10,8 @@ import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "./MapView.css";
 
+import { useSettings } from "../../context/SettingContext";
+
 setWorkerUrl(workerUrl);
 
 type MapViewProps = {
@@ -18,6 +19,8 @@ type MapViewProps = {
 };
 
 function MapView({ onMapReady }: MapViewProps) {
+
+  const {context} = useSettings();
   const mapContainer = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -55,16 +58,8 @@ function MapView({ onMapReady }: MapViewProps) {
 
       cancelPendingTileRequestsWhileZooming: false,
     });
-
-    map.addControl(
-      new NavigationControl(),
-      "top-right",
-    );
-
-    map.addControl(
-      new AttributionControl(),
-      "bottom-right",
-    );
+    
+    if (context.showMapControls) map.addControl(new NavigationControl(), "top-right");
 
     onMapReady?.(map);
 

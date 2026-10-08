@@ -3,6 +3,7 @@ import { RouterProvider } from "react-router/dom";
 
 import Navbar from "./components/navbar/Navbar";
 import HomePage from "./pages/HomePage";
+import ProfilePage from "./pages/ProfilePage";
 
 function AppLayout() {
   return (
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        Component: HomePage,
+        Component: HomePage, 
+      },
+      {
+        path: "profile",
+        Component: ProfilePage,
       },
     ],
   },

@@ -28,9 +28,9 @@ function Navbar() {
           EN
         </button>
 
-        <button className="navbar-profile">
+        <NavLink to="profile" end>
           <img src={user}/>
-        </button>
+        </NavLink>
       </div>
     </nav>
   );
