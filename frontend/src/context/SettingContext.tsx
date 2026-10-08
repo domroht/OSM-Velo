@@ -7,15 +7,25 @@ import {
 } from "react";
 
 export type SettingsContext = {
-  mapStyle: "light" | "dark";
+  theme: "light" | "dark";
+  lang: "EN" | "DA";
   units: "metric" | "imperial";
   showMapControls: boolean;
+
+  routeColor: string;
+  startPinColor: string;
+  endPinColor: string;
 };
 
 const defaultSettingsContext: SettingsContext = {
-  mapStyle: "light",
+  theme: "light",
+  lang: "EN",
   units: "metric",
   showMapControls: true,
+
+  routeColor: "#2563eb",
+  startPinColor: "#22c55e",
+  endPinColor: "#ef4444",
 };
 
 type SettingsContextType = {

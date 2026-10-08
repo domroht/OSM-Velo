@@ -4,13 +4,11 @@ import {
   NavigationControl,
   setWorkerUrl,
 } from "maplibre-gl";
-
 import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
+import { useSettings } from "../../context/SettingContext";
 
 import "maplibre-gl/dist/maplibre-gl.css";
 import "./MapView.css";
-
-import { useSettings } from "../../context/SettingContext";
 
 setWorkerUrl(workerUrl);
 

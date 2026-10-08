@@ -9,6 +9,7 @@ import {
 import { useSettings } from "../../context/SettingContext";
 import { formatDistance } from "../../utils/units";
 
+
 import "./routeMap.css";
 
 type Point = {
@@ -30,15 +31,14 @@ type SearchResult = {
 function createMapMarker(
   map: MapLibreMap,
   point: Point,
-  type: "start" | "end",
+  color: string,
 ) {
   const element = document.createElement("div");
 
   element.style.width = "16px";
   element.style.height = "16px";
   element.style.borderRadius = "50%";
-  element.style.background =
-    type === "start" ? "#16a34a" : "#dc2626";
+  element.style.background = color
   element.style.border = "3px solid white";
   element.style.boxShadow = "0 1px 4px rgba(0,0,0,0.4)";
 
@@ -97,7 +97,8 @@ function MapRoutePlanner({
     startMarkerRef.current = createMapMarker(
       map,
       startPoint,
-      "start",
+      context.startPinColor,
+
     );
 
     return () => {
@@ -117,7 +118,7 @@ function MapRoutePlanner({
     endMarkerRef.current = createMapMarker(
       map,
       endPoint,
-      "end",
+      context.endPinColor,
     );
 
     return () => {
@@ -324,7 +325,7 @@ function MapRoutePlanner({
           type: "line",
           source: sourceId,
           paint: {
-            "line-color": "#1f3f82",
+            "line-color": context.routeColor,
             "line-width": 5,
             "line-opacity": 0.85,
           },
