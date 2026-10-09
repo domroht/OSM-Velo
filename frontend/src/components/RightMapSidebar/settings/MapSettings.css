@@ -1,0 +1,187 @@
+.settings {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 16px 0;
+    box-sizing: border-box;
+}
+
+.settings-header {
+    margin-bottom: 16px;
+}
+
+.settings-header h1 {
+    margin: 0;
+    font-size: 20px;
+    color: #111;
+}
+
+.settings-card {
+    width: 100%;
+    margin-bottom: 14px;
+    padding: 12px;
+    box-sizing: border-box;
+
+
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+.settings-card h2 {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: #111;
+}
+
+.setting-row,
+.color-setting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+
+    padding: 12px 0;
+    border-top: 1px solid #eee;
+    min-width: 0;
+
+}
+
+.setting-row:first-of-type,
+.color-setting:first-of-type {
+    border-top: 0;
+}
+
+.setting-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.setting-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: #222;
+    overflow-wrap: anywhere;
+}
+
+.settings-select {
+    width: 100px;
+    max-width: 100px;
+    min-width: 0;
+    padding: 6px 4px;
+    box-sizing: border-box;
+
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    background: #fff;
+    font-size: 12px;
+    cursor: pointer;
+
+
+}
+
+.switch {
+    position: relative;
+    flex-shrink: 0;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+
+
+    background: #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+
+
+}
+
+.slider::before {
+    content: "";
+
+
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 3px;
+    top: 3px;
+
+    background: #fff;
+    border-radius: 50%;
+
+    transition: 0.2s;
+
+
+}
+
+.switch input:checked+.slider {
+    background: #111;
+}
+
+.switch input:checked+.slider::before {
+    transform: translateX(14px);
+}
+
+.color-setting {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 0;
+    border-top: 1px solid #eee;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.color-setting .setting-title {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 500;
+    color: #222;
+}
+
+.color-picker,
+.custom-color-picker {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.color-picker input[type="color"],
+.color-swatch {
+    width: 40px;
+    height: 32px;
+    padding: 2px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.color-picker span,
+.color-value {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    font-size: 11px;
+    color: #666;
+}
+

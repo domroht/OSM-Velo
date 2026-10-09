@@ -1,0 +1,23 @@
+{
+    "navbar": {
+        "map": "Kort",
+        "title": "OSM-Velo"
+    },
+    "map_settings": {
+        "title": "Kortindstillinger",
+        "behavior": "Kortadfærd:",
+        "units": "Enheder",
+        "kilometers": "Metriske",
+        "miles": "Imperiale",
+        "map_controls": "Vis kortstyring",
+        "appearance": "Kortudseende:",
+        "route_color": "Rutefarve",
+        "start_pin": "Startmarkør",
+        "end_pin": "Slutmarkør"
+    },
+    "map_sidebar": {
+        "route": "Planlæg en rute",
+        "saved_routes": "Gemte ruter",
+        "saved_locations": "Gemte lokationer"
+    }
+}

@@ -1,0 +1,22 @@
+.map-view {
+    width: 100%;
+    height: 100%;
+}
+
+.maplibregl-ctrl-bottom-right {
+right: 12px;
+transition:120ms ease;
+}
+
+.map-page.right-expanded .maplibregl-ctrl-bottom-right {
+right: 250px; 
+}
+
+.map-page.right-collapsed .maplibregl-ctrl-bottom-right {
+right: 50px; 
+}
+
+.maplibregl-ctrl-bottom-left {
+left: 12px;
+bottom: 10px;
+}

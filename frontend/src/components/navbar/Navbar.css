@@ -1,117 +1,99 @@
 .navbar {
-  height: 60px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
+    height: 50px;
+    padding: 0 24px;
 
-  padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
 
-  background: white;
-  border-bottom: 1px solid #ddd;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
 }
 
-.navbar-left {
-  display: flex;
-  justify-content: flex-start;
+.navbar-left a {
+    color: #111;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
 }
-
-
-
 
 .navbar-center {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.navbar-right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 20px;
-}
-
-.navbar-logo {
-  color: #111;
-  font-size: 20px;
-  font-weight: 700;
-  text-decoration: none;
+    display: flex;
+    height: 100%;
 }
 
 .navbar-center a {
-  position: relative;
+    position: relative;
 
-  padding: 20px 0;
+    display: flex;
+    align-items: center;
+    padding: 0 22px;
 
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .navbar-center a:hover {
-  color: #111;
+    color: #111;
+    background: #f5f5f5;
 }
 
 .navbar-center a.active {
-  color: #111;
+    color: #111;
 }
 
 .navbar-center a.active::after {
-  content: "";
-
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  height: 2px;
-
-  background: #111;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background: #111;
 }
 
-
-
-
-.navbar-icon,
-.navbar-language,
-.navbar-profile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: none;
-  background: transparent;
-
-  cursor: pointer;
+.navbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
 }
 
-.navbar-icon {
-  width: 32px;
-  height: 32px;
+.navbar-right button {
+    padding: 5px 8px;
 
-  font-size: 14px;
+    border: 0px;
+
+    border-radius: 6px;
+    background: transparent;
+
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-.navbar-language {
-  width: 32px;
-  height: 32px;
-
-  font-size: 14px;
+.navbar-right button:hover {
+    background: #f0f0f0;
 }
 
-.navbar-profile {
-  width: 32px;
-  height: 32px;
+.navbar-right a {
+    width: 30px;
+    height: 30px;
 
-  font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 6px;
 }
 
-.navbar-language {
-  font-family: Arial, sans-serif;
-  font-size: 17px;
-  font-weight: 500;
+.navbar-right a:hover {
+    background: #f3f3f3;
+}
 
-  border: none;
-  background: transparent;
-  cursor: pointer;
+.navbar-right img {
+    width: 17px;
+    height: 17px;
 }

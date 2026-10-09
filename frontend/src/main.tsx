@@ -5,9 +5,9 @@ import App from "./App";
 import { SettingsProvider } from "./context/SettingContext";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <SettingsProvider>
-      <App />
-    </SettingsProvider>
-  </StrictMode>,
+    <StrictMode>
+        <SettingsProvider>
+            <App />
+        </SettingsProvider>
+    </StrictMode>,
 );

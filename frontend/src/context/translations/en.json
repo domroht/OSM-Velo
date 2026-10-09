@@ -1,0 +1,23 @@
+{
+    "navbar": {
+        "map": "Map",
+        "title": "OSM-Velo"
+    },
+    "map_settings": {
+        "title": "Map Settings",
+        "behavior": "Map behavior:",
+        "units": "Units",
+        "kilometers": "Metrics",
+        "miles": "Imperical",
+        "map_controls": "Show map controls",
+        "appearance": "Map appearance:",
+        "route_color": "Route color",
+        "start_pin": "Start marker",
+        "end_pin": "End marker"
+    },
+    "map_sidebar": {
+        "route": "Plan a route",
+        "saved_routes": "Saved routes",
+        "saved_locations": "Saved locations"
+    }
+}
